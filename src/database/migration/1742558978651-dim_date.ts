@@ -4,7 +4,7 @@ export class DimDate1742558978651 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.query(
       `
-                CREATE TABLE dim_date (
+                CREATE TABLE IF NOT EXISTS dim_date (
                     date_id SERIAL PRIMARY KEY,               -- Identificador único da data
                     date DATE,                                -- Data completa
                     day INT,                                  -- Dia do mês

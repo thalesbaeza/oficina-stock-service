@@ -4,7 +4,7 @@ export class DimPart1742559221584 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.query(
       `
-        CREATE TABLE dim_part (
+        CREATE TABLE IF NOT EXISTS dim_part (
             part_id SERIAL PRIMARY KEY,               -- Identificador único da peça
             part_name VARCHAR(100),                   -- Nome da peça
             part_type VARCHAR(50),                    -- Tipo de peça (ex: motor, pneu, etc.)

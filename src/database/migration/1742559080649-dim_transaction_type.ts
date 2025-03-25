@@ -4,7 +4,7 @@ export class DimTransactionType1742559080649 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.query(
       `
-            CREATE TABLE dim_transaction_type (
+            CREATE TABLE IF NOT EXISTS dim_transaction_type (
                 transaction_type_id SERIAL PRIMARY KEY,   -- Identificador único do tipo de transação
                 transaction_type_name VARCHAR(50),        -- Nome do tipo de transação (ex: Entrada, Saída)
                 description TEXT                          -- Descrição do tipo de transação
